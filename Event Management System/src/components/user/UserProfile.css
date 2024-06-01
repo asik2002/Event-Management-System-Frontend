@@ -1,0 +1,26 @@
+.user-profile {
+    display: flex;
+    align-items: center;
+    background-color: rgb(191, 144, 191);
+    padding: 10px;
+    border-radius: 5px; 
+    color: white;
+    margin-right: 30px;
+  }
+
+  .user-profile span {
+    margin-right: 10px;
+  }
+  
+  .user-profile button {
+    background-color: rgb(147, 32, 144);
+    border-radius: 100px;
+    border: none;
+    padding: 10px;
+    color: white;
+  }
+  
+  .user-profile button:hover {
+    color: #f30aff;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
+  }

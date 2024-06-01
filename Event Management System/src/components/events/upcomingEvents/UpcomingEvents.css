@@ -1,0 +1,73 @@
+.upcoming-container{
+    display: flex;
+    background-color: rgb(87, 92, 92);
+    min-height: 400px;    
+}
+.upcoming-description{
+    min-width: 40%;
+    padding-top: 150px;
+}
+.upcoming-description h1{
+    margin-left: 35px; 
+    color: #fff;
+    font-family: sans-serif ;
+   font-size: 3.5em; 
+}
+.upcoming-description p{
+    margin-left: 35px;
+    color: #fff;
+    font-family: Manrope  ;
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+.carousel-container{
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.carousel{
+  align-self: center;
+  width: 80%;
+  border-radius: 15px;
+}
+.event-slide {
+    padding: 20px;
+    background-color:rgb(189, 161, 206) ;
+    font-family: Manrope;
+  }
+.event-slide h3{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 8px;
+}
+.event-slide p{
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 2px;
+}  
+.carousel .control-arrow {
+    background: rgba(3, 2, 2, 0.3) !important;
+    
+    opacity: 1 !important; 
+}
+.carousel .control-arrow:hover {
+  background: rgba(3, 2, 2, 0.5) !important;
+  opacity: 1 !important; 
+}
+.event-slide button{
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  font-family: Manrope;
+  font-weight: bold;
+  background-color: rgb(95, 74, 94);
+  color: #fff;
+ 
+}
+.event-slide button:hover{
+  box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
+  
+}

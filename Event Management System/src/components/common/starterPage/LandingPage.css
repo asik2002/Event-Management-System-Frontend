@@ -1,0 +1,60 @@
+.landing-container{
+#hero-section{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height:600px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: rgb(203, 177, 203);
+}
+.description{
+   margin-left: 80px;
+   padding: 50px;
+   background-color:rgb(248, 211, 248);
+   box-shadow: 10px 18px 10px rgba(0, 0, 0, 0.3);
+   align-self: center;
+border-radius: 20px;  
+ 
+}
+#heading{
+    text-align: center;
+}
+#description{
+    text-align: center;
+    font-size: large;
+    font-family: georgia;
+}
+ 
+#main-image{
+margin-left: 220px;
+padding-left: 30px;
+  width: 500px;
+  height: 500px;
+  border-bottom-left-radius: 450px;
+  border-bottom-right-radius: 00px;
+  background-color: rgb(141, 116, 141);
+}
+#content{
+    background-color:rgb(240, 192, 240); 
+    text-align: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 20px;
+            
+}
+#bottom{
+    border-bottom-left-radius:100px ;
+    border-bottom-right-radius:100px ;
+    background-color: rgb(203, 177, 203);
+}
+#footer{
+    text-align: center;
+    background-color: rgb(203, 177, 203);
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 20px;
+    border-top-left-radius: 800px;
+    border-top-right-radius: 800px;
+}
+}
