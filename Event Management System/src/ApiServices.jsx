@@ -27,3 +27,7 @@ export const fetchUpcomingEvents = async (email) => {
     const response = await axios.post(`${API_BASE_URL}/unenroll-event`, { eventId, emailId: email });
     return response.data;
   };
+  export const hostEvent =async(formData) =>{
+    const response= await axios.post(`${API_BASE_URL}/create-event`,formData);
+    return response.data;
+  }

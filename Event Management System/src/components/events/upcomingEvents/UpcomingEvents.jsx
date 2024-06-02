@@ -25,11 +25,12 @@ const UpcomingEvents = () => {
     try {
       const response = await enrollEvent(eventId, user.email);
       console.log(response);
+      toast.success(response)
     } catch (error) {
       console.error('Failed to enroll in event', error);
+      toast.error("Some Backend error")
     }
     setEnroll(!enroll);
-    toast.success('Successfully Enrolled');
   };
   return (
     <div className='upcoming-container'>
@@ -38,7 +39,7 @@ const UpcomingEvents = () => {
       <p>Don't Miss our Upcoming Events -{'>'} </p>
       </div>
     <div id='upcoming-events' className='carousel-container'>
-    <Carousel className="carousel"showThumbs={false} showStatus={false} autoPlay interval={5000}  infiniteLoop   >
+    <Carousel className="carousel"showThumbs={false} showStatus={false} /*autoPlay interval={5000}*/  infiniteLoop   >
       {events.map(event => (
         <div key={event.eventId} className="event-slide">
           <h1>{event.eventName}</h1>

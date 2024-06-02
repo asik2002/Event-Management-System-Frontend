@@ -15,12 +15,13 @@ const UserProfile = () => {
     <div className="user-profile">
       <span>{user.email}</span> 
       <div className='dropdown'>
-        <button className='menu-btn' onClick={toggleDropdown} ><span class="material-symbols-outlined">manage_accounts</span></button>
+        <button className='menu-btn' onClick={toggleDropdown} ><span className="material-symbols-outlined">manage_accounts</span></button>
         {isDropdownOpen && (
           <div className='dropdown-menu'>
             <NavLink to='/profile' className='dropdown-item muted'>Profile</NavLink>
-            <NavLink to='/settings' className='dropdown-item'>Settings</NavLink>
-            <button onClick={openModal} className='dropdown-item'>Host Event</button>
+            <NavLink to='/registeredEvents' className='dropdown-item '>Registered Events</NavLink>
+            <NavLink to='/hostedEvents' className='dropdown-item'>Hosted Events</NavLink>
+            <NavLink onClick={openModal} className='dropdown-item'>Host Event</NavLink>
             <button onClick= {logout} className='dropdown-item'>Logout</button>
             <EventCreation isOpen={isModalOpen} onRequestClose={closeModal} />
           </div>

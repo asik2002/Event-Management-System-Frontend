@@ -23,13 +23,14 @@ const RecentEvents = () => {
   return (
     <div className='container'>
     <p className='heading'>Our Recent Events</p>
-    <Box  sx={{ display: 'flex', alignItems: 'center', mt: 4,width:"100vw" }}>
+    <Box  sx={{ display: 'flex', justifyContent:'space-between', mt: 4  }}>
       {error && <Typography color="error">{error}</Typography>}
-      <Box className='disable-scroll' sx={{ display: 'flex',overflowX:"scroll", flexWrap: 'nowrap', justifyContent: 'center',padding:"50px",maxWidth:"90%",margin:'auto', backgroundColor:"rgb(118, 131, 181)"}}>
+      {/* <Box className='disable-scroll' sx={{ display: 'flex',overflowX:"scroll", flexWrap: 'nowrap', justifyContent: 'center',padding:"50px",maxWidth:"90%",margin:'auto', backgroundColor:"rgb(118, 131, 181)"}}> */}
         {events.map(event => (
           <EventCard key={event.eventId} event={event} />
         ))}
-      </Box>
+       
+      {/* </Box> */}
     </Box>
     </div>
   )
