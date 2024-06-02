@@ -46,6 +46,7 @@ nav {
 
 .nav-btn :hover {
   background-color: #f30aff;
+  box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
 }
 .logo{
   margin-left: 30px;

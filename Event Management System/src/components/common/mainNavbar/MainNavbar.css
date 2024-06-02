@@ -21,14 +21,14 @@
   
   .logo a {
     text-decoration: none;
-    font-size: 24px;
-    font-family: monospace, arial;
+    font-size: 34px;
+    font-family: Raleway;
     font-weight: bold;
     color: white;
     margin-left: 20px;
   }
   
-  .nav-links {
+  /* .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
@@ -54,4 +54,4 @@
   .nav-btn:hover {
     background-color: #f30aff;
     box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
-  }
+  } */
