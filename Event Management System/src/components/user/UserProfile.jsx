@@ -9,7 +9,7 @@ const UserProfile = () => {
   return (
     <div className="user-profile">
       <span>{user.email}</span>
-      {/* <button onClick={logout}>Logout</button> */}
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };
