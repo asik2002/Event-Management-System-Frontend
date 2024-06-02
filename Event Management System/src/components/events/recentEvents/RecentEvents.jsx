@@ -23,9 +23,9 @@ const RecentEvents = () => {
   return (
     <div className='container'>
     <p className='heading'>Our Recent Events</p>
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
+    <Box  sx={{ display: 'flex', alignItems: 'center', mt: 4,width:"100vw" }}>
       {error && <Typography color="error">{error}</Typography>}
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center',padding:"50px", backgroundColor:"rgb(118, 131, 181)"}}>
+      <Box className='disable-scroll' sx={{ display: 'flex',overflowX:"scroll", flexWrap: 'nowrap', justifyContent: 'center',padding:"50px",maxWidth:"90%",margin:'auto', backgroundColor:"rgb(118, 131, 181)"}}>
         {events.map(event => (
           <EventCard key={event.eventId} event={event} />
         ))}

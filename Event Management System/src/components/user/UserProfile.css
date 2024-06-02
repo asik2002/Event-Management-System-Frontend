@@ -12,15 +12,53 @@
     margin-right: 10px;
   }
   
-  .user-profile button {
+  .user-profile .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(147, 32, 144);
-    border-radius: 100px;
+    border-radius:50px;
     border: none;
     padding: 10px;
-    color: white;
+    color: #fff;
+  }
+  .menu-btn span{
+    margin: 0;padding: 0;
   }
   
-  .user-profile button:hover {
-    color: #f30aff;
+  .user-profile .menu-btn:hover {
+    background-color: #f30aff;
     box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
+  } 
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
   }
+  
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    border: none;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ddd;
+  }
+  .muted{
+    color: #777;
+    pointer-events: none;
+  }
+ 
