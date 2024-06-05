@@ -22,7 +22,9 @@ const UpcomingEvents = () => {
     loadUpcomingEvents();
   }, [enroll]);
   const handleEnroll = async (eventId) => {
-    try {
+    const confirm = window.confirm("Your details can be viewed by the Host, Are you sure Want to Enroll")
+   if(confirm){
+     try {
       const response = await enrollEvent(eventId, user.email);
       console.log(response);
       toast.success(response)
@@ -31,13 +33,16 @@ const UpcomingEvents = () => {
       toast.error("Some Backend error")
     }
     setEnroll(!enroll);
-  };
+  }}
   return (
     <div className='upcoming-container'>
       <div className='upcoming-description'>
       <h1>Unlock the fun !</h1>
       <p>Don't Miss our Upcoming Events -{'>'} </p>
       </div>
+      {events.length === 0 ? (
+            <h4 className="null-data">You might have enrolled All events ! Stay tuned for Upcoming Events...</h4>
+          ) :null}
     <div id='upcoming-events' className='carousel-container'>
     <Carousel className="carousel"showThumbs={false} showStatus={false} /*autoPlay interval={5000}*/  infiniteLoop   >
       {events.map(event => (

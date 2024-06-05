@@ -21,7 +21,7 @@ const EventCard = ({ event }) => {
             <strong>Location:</strong> {event.location}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <strong>Start Date:</strong> {new Date(event.startDate).toLocaleDateString()}
+            <strong>Start Date:</strong> {new Date(event.startDate).toLocaleDateString()} 
           </Typography>
           <Typography variant="body2" color="text.secondary">
             <strong>End Date:</strong> {new Date(event.endDate).toLocaleDateString()}

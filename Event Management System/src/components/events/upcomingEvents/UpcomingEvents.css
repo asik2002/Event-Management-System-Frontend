@@ -36,6 +36,8 @@
     padding: 20px;
     background-color:rgb(189, 161, 206) ;
     font-family: Manrope;
+    height:100%;
+    width: 100%;
   }
 .event-slide h3{
   text-align: left;
@@ -71,3 +73,9 @@
   box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
   
 }
+.null-data{
+  align-content: center;
+  color: white;
+  width: 200%;
+  text-align: center;
+ }

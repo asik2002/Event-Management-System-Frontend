@@ -55,7 +55,7 @@
   }
   
   .dropdown-item:hover {
-    background-color: #ddd;
+    background-color : #ddd;
   }
   .muted{
     color: #777;

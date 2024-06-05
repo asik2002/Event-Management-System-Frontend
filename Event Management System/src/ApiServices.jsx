@@ -23,11 +23,19 @@ export const fetchUpcomingEvents = async (email) => {
     return response.data;
   };
   
-  export const unenrollEvent = async (eventId) => {
-    const response = await axios.post(`${API_BASE_URL}/unenroll-event`, { eventId, emailId: email });
+  export const unenrollEvent = async (eventId,email) => {
+    const response = await axios.delete(`${API_BASE_URL}/unenroll-event`,{ data:{eventId,emailId:email} });
     return response.data;
   };
   export const hostEvent =async(formData) =>{
     const response= await axios.post(`${API_BASE_URL}/create-event`,formData);
+    return response.data;
+  };
+  export const finishedEnrolledEvents =async(email)=>{
+    const response= await axios.get(`${API_BASE_URL}/get-enrolled-finished-events/${email}`)
+    return response.data;
+  }
+  export const enrolledEvents =async(email)=>{
+    const response = await axios.get(`${API_BASE_URL}/get-enrolled-events/${email}`)
     return response.data;
   }

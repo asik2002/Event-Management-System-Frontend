@@ -18,8 +18,9 @@ const UserProfile = () => {
         <button className='menu-btn' onClick={toggleDropdown} ><span className="material-symbols-outlined">manage_accounts</span></button>
         {isDropdownOpen && (
           <div className='dropdown-menu'>
+            <NavLink to='/landing' className='dropdown-item'>Home</NavLink>
             <NavLink to='/profile' className='dropdown-item muted'>Profile</NavLink>
-            <NavLink to='/registeredEvents' className='dropdown-item '>Registered Events</NavLink>
+            <NavLink to='/enrolledEvents' className='dropdown-item '>Enrolled Events</NavLink>
             <NavLink to='/hostedEvents' className='dropdown-item'>Hosted Events</NavLink>
             <NavLink onClick={openModal} className='dropdown-item'>Host Event</NavLink>
             <button onClick= {logout} className='dropdown-item'>Logout</button>
