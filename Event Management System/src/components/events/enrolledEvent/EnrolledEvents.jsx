@@ -89,7 +89,8 @@ catch (error){
               >
                 <h3>{uevent.eventName}</h3>
                 <div>{expandedUpcoming === index ? '-' : '+'}</div>
-              </div>
+               
+              </div> 
               {expandedUpcoming === index && (
                 <div className="upcoming-accordion-content">
                   <b>Description:</b> {uevent.description}

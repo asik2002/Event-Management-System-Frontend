@@ -98,7 +98,6 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
-
-.accordion-title,.upcoming-accordion-title:hover{
+.accordion-title,.accordion-title,.upcoming-accordion-title:hover{
     cursor: pointer;
 }

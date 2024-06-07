@@ -39,3 +39,12 @@ export const fetchUpcomingEvents = async (email) => {
     const response = await axios.get(`${API_BASE_URL}/get-enrolled-events/${email}`)
     return response.data;
   }
+  export const previouslyHostedEvents =async(email)=>{
+    const response = await axios.get(`${API_BASE_URL}/get-previous-by-host-email/${email}`)
+    return response.data;
+  }
+  export const upcomingHostedEvents =async(email)=>{
+    const response= await axios.get(`${API_BASE_URL}/get-upcoming-by-host-email/${email}`)
+    return response.data;
+  }
+  

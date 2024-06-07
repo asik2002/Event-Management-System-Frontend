@@ -41,7 +41,7 @@ const UpcomingEvents = () => {
       <p>Don't Miss our Upcoming Events -{'>'} </p>
       </div>
       {events.length === 0 ? (
-            <h4 className="null-data">You might have enrolled All events ! Stay tuned for Upcoming Events...</h4>
+            <h4 className="null-data-upcoming">You might have enrolled All events ! Stay tuned for Upcoming Events...</h4>
           ) :null}
     <div id='upcoming-events' className='carousel-container'>
     <Carousel className="carousel"showThumbs={false} showStatus={false} /*autoPlay interval={5000}*/  infiniteLoop   >

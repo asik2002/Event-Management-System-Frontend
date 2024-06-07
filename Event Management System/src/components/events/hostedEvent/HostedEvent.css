@@ -1,8 +1,87 @@
 .previous-hosted{
     background:rgb(166, 172, 235);
-    min-height: 350px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
 }
+.previous-hosted h1{
+    align-self: center;
+}
+.accordion-container{
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;   
+}
+.accordion-title{
+    display: flex;
+    background-color: rgb(150, 182, 213);
+    justify-content: space-between;
+    margin: 0px 15px 0px ;
+    padding: 5px 10px;
+}
+.accordion-content{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(156, 160, 160);
+    justify-content: space-between;
+    margin: 0px 15px ;
+    padding: 5px 10px;
+}
+.accordion-item{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.null-data{
+ height:200px;
+ align-self: center;
+ align-content: center;
+ color: white
+}
+
+
 .upcoming-hosted{
     background: rgb(119, 173, 221);
     min-height: 350px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+.upcoming-hosted h1{
+    align-self: center;
+}
+.upcoming-accordion-container{
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;   
+}
+.upcoming-accordion-title{
+    display: flex;
+    background-color: rgb(150, 182, 213);
+    justify-content: space-between;
+    margin: 0px 15px 0px ;
+    padding: 5px 10px;
+}
+.upcoming-accordion-content{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(156, 160, 160);
+    justify-content: space-between;
+    margin: 0px 15px ;
+    padding: 5px 10px;
+}
+.upcoming-accordion-item{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.accordion-title,.upcoming-accordion-title:hover{
+    cursor: pointer;
 }
