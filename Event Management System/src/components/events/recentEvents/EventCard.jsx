@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 const EventCard = ({ event }) => {
   return (
-    <Card sx={{ maxWidth: 400, margin: 2, boxShadow: "10px 18px 10px rgba(0, 0, 0, 0.3)",backgroundColor:"rgb(229, 229, 230)"}}>
+    <Card sx={{ maxWidth: 400,margin:'auto', boxShadow: "10px 18px 10px rgba(0, 0, 0, 0.3)",backgroundColor:"rgb(229, 229, 230)"}}>
       <CardContent>
         <Typography variant="h4"  align='center' >
           {event.eventName}

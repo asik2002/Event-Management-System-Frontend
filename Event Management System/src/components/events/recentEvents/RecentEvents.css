@@ -1,16 +1,19 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
-    min-height:500px;
-    background-color: #332d6c;
+    min-height: 500px;
+    padding: 10px;
+    background-color: var(--color-secondary-150);
 }
-.heading{
-margin-top: 10px;
-text-align: center;
-font-size: 3em;
-color: #fff;
-font-family:  Raleway;
+
+.heading {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+    font-family: Raleway;
 }
-.disable-scroll::-webkit-scrollbar{
+
+.disable-scroll::-webkit-scrollbar {
     display: none;
 }

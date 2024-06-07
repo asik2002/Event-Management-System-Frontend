@@ -6,3 +6,10 @@ body{
     overflow-x: hidden;
     width: 100vw;
 }
+.custom-btn{
+    background: var(--color-secondary-250);
+    color: #fff;
+}
+.custom-btn:hover{
+    background: var(--color-secondary-200);
+}
