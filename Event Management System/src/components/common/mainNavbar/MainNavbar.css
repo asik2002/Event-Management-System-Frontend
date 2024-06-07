@@ -1,8 +1,9 @@
+@import url("../../../colors.css");
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(101, 41, 101);
+    background-color: var(--color-primary-100);
     padding: 10px;
     position: sticky;
     top: 0;
@@ -24,7 +25,7 @@
     font-size: 24px;
     font-family: monospace, arial;
     font-weight: bold;
-    color: white;
+    color: #000;
     margin-left: 20px;
   }
   
