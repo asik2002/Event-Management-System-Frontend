@@ -1,6 +1,6 @@
 .upcoming-container{
     display: flex;
-    background-color: rgb(87, 92, 92);
+    background-color: var(--color-primary-100);
     min-height: 400px;    
 }
 .upcoming-description{
@@ -9,14 +9,12 @@
 }
 .upcoming-description h1{
     margin-left: 35px; 
-    color: #fff;
-    font-family: sans-serif ;
+    color: #000000;
    font-size: 3.5em; 
 }
 .upcoming-description p{
     margin-left: 35px;
-    color: #fff;
-    font-family: Manrope  ;
+    color: #000000;
     font-size: 1.5em;
     margin-top: 15px;
   }
@@ -29,13 +27,13 @@
 }
 .carousel{
   align-self: center;
+  position: relative !important;
   width: 90%;
   border-radius: 15px;
 }
 .event-slide {
     padding: 20px;
-    background-color:rgb(189, 161, 206) ;
-    font-family: Manrope;
+    background-color:var(--color-primary-150) ;
     height:100%;
     width: 100%;
   }
@@ -49,25 +47,35 @@
   margin-left: 50px;
   margin-top: 2px;
 }  
+.event-slide span{
+  float: left;
+  margin-left: 50px;
+  margin-right: 8px;
+}
 .carousel .control-arrow {
     background: rgba(3, 2, 2, 0.3) !important;
-    
     opacity: 1 !important; 
+    height: 50px !important;
+    position: absolute !important;
+    top: 50% !important;
+    width: 50px !important;
+    border-radius: 50px !important;
+    margin: 0 10px !important;
+
 }
 .carousel .control-arrow:hover {
   background: rgba(3, 2, 2, 0.5) !important;
   opacity: 1 !important; 
 }
+.carousel-desc{
+  font-size: 1.3em;
+}
 .event-slide button{
-  margin-bottom: 15px;
+  margin-top: 15px;
   padding: 5px 10px;
   border-radius: 4px;
   border: none;
-  font-family: Manrope;
-  font-weight: bold;
-  background-color: rgb(95, 74, 94);
-  color: #fff;
- 
+  font-size: 1.1em;
 }
 .event-slide button:hover{
   box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.2);
@@ -75,7 +83,7 @@
 }
 .null-data-upcoming{
   align-content: center;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 200%;
   text-align: center;
  }

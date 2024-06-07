@@ -5,32 +5,34 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 const EventCard = ({ event }) => {
   return (
-    <Card sx={{ maxWidth: 400,margin:'auto', boxShadow: "10px 18px 10px rgba(0, 0, 0, 0.3)",backgroundColor:"rgb(229, 229, 230)"}}>
-      <CardContent>
-        <Typography variant="h4"  align='center' >
+    <Card className='recent-card' sx={{ minWidth: '45%', minHeight: '100%', margin: 'auto', boxShadow: "10px 18px 10px rgba(0, 0, 0, 0.3)", backgroundColor: "rgb(229, 229, 230)" }}>
+      <CardContent >
+        <Typography className='card-heading' variant="h4"  >
           {event.eventName}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography className='card-description' variant="body2" color="text.secondary">
           {event.description}
         </Typography>
-        <Box mt={2}>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Host:</strong> {event.hostEmail}
+        <Box className='card-details' mt={2}>
+          <Typography className='card-items' variant="body2" color="text.secondary">
+            <span class="material-symbols-outlined">
+              person
+            </span> {event.hostEmail}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Location:</strong> {event.location}
+          <Typography className='card-items' variant="body2" color="text.secondary">
+            <span class="material-symbols-outlined">
+              location_on
+            </span> {event.location}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Start Date:</strong> {new Date(event.startDate).toLocaleDateString()} 
+          <Typography className='card-items' variant="body2" color="text.secondary">
+            <span class="material-symbols-outlined">
+              calendar_month
+            </span> {new Date(event.startDate).toDateString()} to {new Date(event.endDate).toDateString()}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>End Date:</strong> {new Date(event.endDate).toLocaleDateString()}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Time:</strong> {event.time}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            <strong>Total Days:</strong> {event.totalDays}
+          <Typography className='card-items' variant="body2" color="text.secondary">
+            <span class="material-symbols-outlined">
+              watch_check
+            </span> {event.time}
           </Typography>
         </Box>
       </CardContent>

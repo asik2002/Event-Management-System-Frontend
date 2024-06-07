@@ -44,14 +44,16 @@ const EventCreation = ({ isOpen, onRequestClose }) => {
   };
 
   return (
+    
     <Modal
     isOpen={isOpen}
     onRequestClose={onRequestClose}
-    className="event-modal"
+    className="event-modal disable-scroll"
     overlayClassName="event-modal-overlay"
   >
     <div className="event-modal-content">
       <h2>Host Event</h2>
+      <span className='material-symbols-outlined form-close' onClick={onRequestClose}>close</span>
       <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="eventName">Event Name</label>
@@ -129,9 +131,11 @@ const EventCreation = ({ isOpen, onRequestClose }) => {
               required
             />
           </div>
-          <button type="submit" className="submit-button">Create Event</button>
-          <button type="button" className="close-button" onClick={onRequestClose}>Close</button>
+          <div className='btn-wrapper'>
+          <button type="submit" className="submit-button custom-btn">Create Event</button>
+          </div>
         </form>
+        
     </div>
   </Modal>
   );
