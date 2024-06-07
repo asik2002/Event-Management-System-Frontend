@@ -11,11 +11,8 @@ const LandingPage = () => {
     </div>
     <img id="main-image" src={event}alt="main image"></img>
     </div>
-    <div id="bottom">
-          <h2 id="content">Sign up for full access to eventique</h2>    
-    </div>
     <div id="footer">
-        <h4>Eventique</h4>
+        <h3>Eventique</h3>
         <p>&#169; Copyright 2024 Eventique - All rights reserved</p>
     </div>
     </div>

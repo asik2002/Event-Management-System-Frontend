@@ -1,101 +1,104 @@
+@import url("../../../colors.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedan+SC&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Poppins",sans-serif;
+    box-sizing: border-box;
+}
+.branding{
+  font-family: "Sedan SC", serif !important;
+}
 .body {
-  font-family: 'Arial', sans-serif;
-  background-color:rgb(203, 177, 203);
+  background-color: var(--color-primary-100);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
 
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+.login-container {
+  background-color: var(--color-primary-150);
+  border-radius: 10px;
+  box-shadow: 10px 18px 10px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
 
-  
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  margin-right: 24px;
+}
+
+#icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.login-form h1 {
+  margin-bottom: 24px;
+  color: #060505;
+}
+
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-secondary-250);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.login-button:hover {
+  background-color: var(--color-secondary-200);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.signup-link {
+  margin-top: 16px;
+  color: #555;
+}
+
+.signup-link .nav-link {
+  color: var(--color-secondary-200);
+  text-decoration: none;
+}
+
+.signup-link .nav-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
   .login-container {
-    background-color:rgb(248, 211, 248);
-    border-radius: 10px;
-    box-shadow: 10px 18px 10px  rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  #header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    margin-right: 24px;
-  }
-  #icon {
-    width: 40px;
-    height: 40px; 
-    margin-right: 20px;
-  }
-
-  .login-form h1 {
-    margin-bottom: 24px;
-    color: #060505;
-  }
-  
-  .input-group {
-    margin-bottom: 16px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #866684;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 16px;
-  }
-  
-  .login-button:hover {
-    background-color: #bc43b2;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-
-  }
-  
-  .signup-link {
-    margin-top: 16px;
-    color: #555;
-  }
-  
-  .signup-link .nav-link {
-    color: #844676;
-    text-decoration: none;
-  }
-  
-  .signup-link .nav-link:hover {
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 600px) {
-    .login-container {
-      padding: 20px;
-    }
+    padding: 20px;
   }
 }

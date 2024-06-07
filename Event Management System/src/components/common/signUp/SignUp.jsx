@@ -37,7 +37,7 @@ const SignUp = () => {
     <div className="signup-form">
       <div id='header'>
         <img className='icon' src={icon} alt="eventique icon" />
-        <h1>Eventique</h1>
+        <h1 className='branding'>Eventique</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
@@ -78,8 +78,8 @@ const SignUp = () => {
         <button type="submit" className="signup-button">Sign Up</button>
       </form>
       {message && <p>{message}</p>}
-      <p className="login-link">Already have an account?
-        <NavLink className="nav-link" to="/login"> Log In</NavLink> 
+      <p className="login-link">Already have an account?{" "}
+        <NavLink className="nav-link" to="/login">Log In</NavLink> 
        </p>
     </div>
   </div>

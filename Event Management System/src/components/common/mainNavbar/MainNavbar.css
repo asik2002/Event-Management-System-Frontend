@@ -1,9 +1,9 @@
-@import url("../../../colors.css");
+/* @import url("../../../colors.css");
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-primary-100);
+    background-color: var(--color-primary-150);
     padding: 10px;
     position: sticky;
     top: 0;
@@ -27,8 +27,8 @@
     font-weight: bold;
     color: #000;
     margin-left: 20px;
-  }
-  
+  } */
+  /* no use */
   /* .nav-links {
     list-style: none;
     display: flex;

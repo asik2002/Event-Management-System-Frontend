@@ -34,7 +34,7 @@ try {
     <div className="login-form">
       <div id='header'>
       <img id='icon' src={icon} alt="eventique icon" />
-      <h2>Eventique</h2>
+      <h2 className="branding">Eventique</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
@@ -58,8 +58,8 @@ try {
         <button type="submit" className="login-button">Log In</button>
       </form>
       {message && <p>{message}</p>}
-      <p className="signup-link">Don't have an account?
-       <NavLink className="nav-link" to="/signup"> Sign Up</NavLink> 
+      <p className="signup-link">Don't have an account?{" "}
+       <NavLink className="nav-link" to="/signup">Sign Up</NavLink> 
        </p>
     </div>
   </div>
