@@ -1,6 +1,6 @@
 import "./Login.css"
 import { NavLink,useNavigate } from "react-router-dom"
-import icon from "../../../assets/icon.jpeg"
+import icon from "../../../assets/icon.png"
 import { useAuth } from "../../../AuthContext"
 import {loginUser} from "../../../ApiServices"
 import React, { useState } from 'react';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import icon from "../../../assets/icon.jpeg";
+import icon from "../../../assets/icon.png";
 import "./SignUp.css";
 import { useAuth } from "../../../AuthContext"
 import { NavLink,useNavigate } from 'react-router-dom';

@@ -1,59 +1,83 @@
 .previous-hosted{
-    background:rgb(166, 172, 235);
-    min-height: 340px;
+    background-color:var(--color-primary-100);
+    min-height: 300px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 .previous-hosted h1{
     align-self: center;
+    color: #000000;
 }
-.accordion-container{
+.accordion-text{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+}
+.accordion-description{
+    font-size: 1.2em ;
+    margin-bottom: 4px;
+}
+ .accordion-container{
     background-color: #ffffff;
     margin-top: 20px;
     margin-bottom: 15px;
     align-self: center;
     display: flex;
     flex-direction: column;
-    min-width: 40%;   
+    width: 40%;  
+    border-radius: 5px;
+    box-shadow: 5px 10px 20px 5px rgba(0, 0, 0, 0.2);
 }
 .accordion-title{
     display: flex;
-    background-color: rgb(150, 182, 213);
+    background-color: #fff;
     justify-content: space-between;
-    margin: 0px 15px 0px ;
+    margin: 10px auto ;
     padding: 5px 10px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.accordion-title h3{
+    font-weight: 300;
+    font-size: 1.4em;
 }
 .accordion-content{
     display: flex;
     flex-direction: column;
-    background-color: rgb(156, 160, 160);
+    /* background-color: rgb(156, 160, 160); */
     justify-content: space-between;
-    margin: 0px 15px ;
+    margin: 10px auto ;
     padding: 5px 10px;
+    
 }
 .accordion-item{
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
+    border-bottom: 1px solid black;
+} 
 .null-data{
  height:200px;
  align-self: center;
  align-content: center;
- color: white
+ color: rgb(255, 0, 0) !important;
+}
+.null-data + .accordion-container{
+    display: none;
 }
 
 
 .upcoming-hosted{
-    background: rgb(119, 173, 221);
-    min-height: 350px;
+    background-color:var(--color-primary-100) ;
+    min-height: 400px;
     display: flex;
     padding: 20px;
     flex-direction: column;
 }
 .upcoming-hosted h1{
     align-self: center;
+    color: #000000;
 }
-.upcoming-accordion-container{
+/* .upcoming-accordion-container{
     background-color: #ffffff;
     margin-top: 20px;
     margin-bottom: 15px;
@@ -64,7 +88,6 @@
 }
 .upcoming-accordion-title{
     display: flex;
-    background-color: rgb(150, 182, 213);
     justify-content: space-between;
     margin: 0px 15px 0px ;
     padding: 5px 10px;
@@ -78,10 +101,6 @@
     padding: 5px 10px;
 }
 .upcoming-accordion-item{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.accordion-title,.upcoming-accordion-title:hover{
-    cursor: pointer;
-}
+    margin-top: 10px;
+    margin-bottom: 2px;
+} */

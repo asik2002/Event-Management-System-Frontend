@@ -1,6 +1,6 @@
 import React from 'react';
 import{NavLink} from 'react-router-dom';
-import icon from '../../../assets/icon.jpeg';
+import icon from '../../../assets/icon.png';
 import UserProfile from '../../user/UserProfile'; 
 import "./MainNavbar.css"
 const MainNavbar = () => {

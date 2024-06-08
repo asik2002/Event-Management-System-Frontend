@@ -9,6 +9,8 @@ const EnrolledEvents = () => {
   const [expandedUpcoming, setExpandedUpcoming] = useState(null);
   const [attendedEvents, setAttendedEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const[trigger,setTrigger]= useState(false);
   const { user } = useAuth();
   useEffect(() => {
@@ -60,49 +62,50 @@ catch (error){
                 onClick={() => toggleAccordion(index, 'attended')}
               >
                 <h3>{event.eventName}</h3>
-                <div>{expandedAttended === index ? '-' : '+'}</div>
+                <div>{expandedAttended === index ? <span class="material-symbols-outlined">arrow_drop_up</span>:<span class="material-symbols-outlined">arrow_drop_down</span>}</div>
               </div>
               {expandedAttended === index && (
                 <div className="accordion-content">
-                  <b>Description:</b> {event.description}
-                  <b>Host:</b> {event.hostEmail}
-                  <b>Date:</b>{new Date(event.startDate).toLocaleDateString()} to {new Date(event.endDate).toLocaleDateString()}
-                  <b>Location:</b> {event.location}
+                   <p className="accordion-description">{event.description}</p>
+                   <p className="accordion-text"><span class="material-symbols-outlined">person</span>{event.hostEmail}</p>
+                   <p className="accordion-text"><span class="material-symbols-outlined">calendar_month</span>{new Date(event.startDate).toLocaleDateString()} to {new Date(event.endDate).toLocaleDateString()}</p>
+                   <p className="accordion-text"><span class="material-symbols-outlined">location_on</span>{event.location}</p>
                 </div>
               )}
             </div>
           ))}
         </div>
       </div>
+      <hr />
       <div className="upcoming-enrolled-events">
         <h1>Enrolled Upcoming Events</h1>
         {upcomingEvents.length === 0 ? (
             <h4 className="null-data">You haven't Enrolled any Events Yet !</h4>
           ) :null}
-        <div className="upcoming-accordion-container">
+        <div className="accordion-container">
           {upcomingEvents.map((uevent, index) => (
             <>
-            <div key={uevent.eventId} className="upcoming-accordion-item">
+            <div key={uevent.eventId} className="accordion-item">
               <div
-                className="upcoming-accordion-title"
+                className="accordion-title"
                 onClick={() => toggleAccordion(index, 'upcoming')}
               >
                 <h3>{uevent.eventName}</h3>
-                <div>{expandedUpcoming === index ? '-' : '+'}</div>
-               
+                
+                <div>{expandedUpcoming === index ? <span class="material-symbols-outlined">arrow_drop_up</span>:<span class="material-symbols-outlined">arrow_drop_down</span>}</div>
+            
               </div> 
               {expandedUpcoming === index && (
-                <div className="upcoming-accordion-content">
-                  <b>Description:</b> {uevent.description}
-                  <b>Host:</b> {uevent.hostEmail}
-                  <b>Date:</b>{new Date(uevent.startDate).toLocaleDateString()} to {new Date (uevent.endDate).toLocaleDateString()}
-                  <b>Total Days</b>{uevent.totalDays}
-                  <b>Time</b>{uevent.time}
-                  <b>Location:</b> {uevent.location}
-                </div>
+                <div className="accordion-content">
+                <p className="accordion-description">{uevent.description}</p>
+                <p className="accordion-text"><span class="material-symbols-outlined">person</span>{uevent.hostEmail}</p>
+                <p className="accordion-text"><span class="material-symbols-outlined">calendar_month</span>{new Date(uevent.startDate).toLocaleDateString()} to {new Date(uevent.endDate).toLocaleDateString()}</p>
+                <p className="accordion-text"><span class="material-symbols-outlined">watch_check</span>{uevent.time}</p>
+                <p className="accordion-text"><span class="material-symbols-outlined">location_on</span>{uevent.location}</p>
+            <button className="btn-unenroll custom-btn" onClick={()=>handleUnEnroll(uevent.eventId,user.email)}>Unenroll</button> </div>
               )}
             </div>
-            <button className="btn-unenroll" onClick={()=>handleUnEnroll(uevent.eventId,user.email)}>Unenroll</button></>
+            </>
           ))}
         </div>
       </div>
