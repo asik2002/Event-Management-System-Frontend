@@ -1,0 +1,15 @@
+.form-close-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+  .content-modal{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .content-modal button{
+    align-self: center;
+    margin-top: 15px;
+  }

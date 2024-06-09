@@ -3,14 +3,18 @@ import { useAuth } from '../../AuthContext';
 import { NavLink } from 'react-router-dom';
 import "./UserProfile.css"
 import EventCreation from '../events/eventCreation/EventCreation';
+import Profilemenu from './profileMenu/Profilemenu';
 const UserProfile = () => {
+  const { user, logout } = useAuth();
+  if (!user) return null;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-  const { user, logout } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const[isProfileOpen,setIsProfileOpen]=useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  if (!user) return null;
+  const openProfileModal=() => setIsProfileOpen(true);
+  const closeProfileModal =()=> setIsProfileOpen(false);
   return (
     <div className="user-profile">
       <span>{user.email}</span> 
@@ -19,12 +23,13 @@ const UserProfile = () => {
         {isDropdownOpen && (
           <div className='dropdown-menu'>
             <NavLink to='/landing' className='dropdown-item'>Home</NavLink>
-            <NavLink to='/profile' className='dropdown-item muted'>Profile</NavLink>
+            <NavLink onClick={openProfileModal} className='dropdown-item'>Profile</NavLink>
             <NavLink to='/enrolledEvents' className='dropdown-item '>Enrolled Events</NavLink>
             <NavLink to='/hostedEvents' className='dropdown-item'>Hosted Events</NavLink>
             <NavLink onClick={openModal} className='dropdown-item'>Host Event</NavLink>
             <button onClick= {logout} className='dropdown-item'>Logout</button>
             <EventCreation isOpen={isModalOpen} onRequestClose={closeModal} />
+            <Profilemenu isOpen={isProfileOpen} onRequestClose={closeProfileModal} />
           </div>
         )}
       </div>

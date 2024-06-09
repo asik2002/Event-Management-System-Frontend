@@ -10,7 +10,6 @@ const EnrolledEvents = () => {
   const [attendedEvents, setAttendedEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const[trigger,setTrigger]= useState(false);
   const { user } = useAuth();
   useEffect(() => {

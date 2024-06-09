@@ -55,4 +55,11 @@ export const fetchUpcomingEvents = async (email) => {
     const response = await axios.delete(`${API_BASE_URL}/delete-event/${eventId}`);
     return response.data;
   }
-  
+  export const getDetailsByEmail= async(email)=>{
+    const response= await axios.get(`${API_BASE_URL}/get-by-email/${email}`);
+    return response.data;
+  }
+  export const deleteUser= async (email)=>{
+    const response = await axios.delete(`${API_BASE_URL}/delete/${email}`);
+    return response.data;
+  }
