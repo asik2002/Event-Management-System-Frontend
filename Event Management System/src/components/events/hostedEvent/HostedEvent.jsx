@@ -1,18 +1,21 @@
 import "./HostedEvent.css"
 import { useState, useEffect } from "react"
 import React from 'react'
-import { previouslyHostedEvents, upcomingHostedEvents } from "../../../ApiServices"
+import { previouslyHostedEvents, upcomingHostedEvents,deleteEventByEventId } from "../../../ApiServices"
 import { useAuth } from "../../../AuthContext"
+
 import { toast } from "react-toastify"
+import EventUpdation from "../eventUpdation/EventUpdation"
 const HostedEvent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const [expandedAttended, setExpandedAttended] = useState(null);
   const [expandedUpcoming, setExpandedUpcoming] = useState(null);
   const [attendedEvents, setAttendedEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [trigger, setTrigger] = useState(false);
   const { user } = useAuth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   useEffect(() => {
     const fetchHostedEvents = async () => {
       try {
@@ -26,7 +29,6 @@ const HostedEvent = () => {
     };
     fetchHostedEvents();
   }, [trigger]);
-
   const toggleAccordion = (index, type) => {
     if (type === 'attended') {
       setExpandedAttended((prevIndex) => (prevIndex === index ? null : index));
@@ -34,6 +36,19 @@ const HostedEvent = () => {
       setExpandedUpcoming((prevIndex) => (prevIndex === index ? null : index));
     }
   };
+  const deleteEvent = async(eventId)=>{
+    const confirm = window.confirm("Are you Sure want to Delete the Event")
+    if(confirm){
+    try{
+    const response= await deleteEventByEventId(eventId);
+    toast.success(response);
+    setTrigger(!trigger);
+    }
+    catch(error){
+      toast.error("Some Backend Error");
+    }
+  }
+  }
   return (
     <>
       <div className='previous-hosted'>
@@ -50,14 +65,15 @@ const HostedEvent = () => {
               >
                 <h3>{event.eventName}</h3>
 
-                <div>{expandedAttended === index ? <span class="material-symbols-outlined">arrow_drop_up</span> : <span class="material-symbols-outlined">arrow_drop_down</span>}</div>
+                <div>{expandedAttended === index ? <span className="material-symbols-outlined">arrow_drop_up</span> : <span className="material-symbols-outlined">arrow_drop_down</span>}</div>
               </div>
               {expandedAttended === index && (
                 <div className="accordion-content">
                   <p className="accordion-description">{event.description}</p>
-                  <p className="accordion-text"><span class="material-symbols-outlined">person</span>{event.hostEmail}</p>
-                  <p className="accordion-text"><span class="material-symbols-outlined">calendar_month</span>{new Date(event.startDate).toLocaleDateString()} to {new Date(event.endDate).toLocaleDateString()}</p>
-                  <p className="accordion-text"><span class="material-symbols-outlined">location_on</span>{event.location}</p>
+                  <p className="accordion-text"><span className="material-symbols-outlined">person</span>{event.hostEmail}</p>
+                  <p className="accordion-text"><span className="material-symbols-outlined">calendar_month</span>{new Date(event.startDate).toLocaleDateString()} to {new Date(event.endDate).toLocaleDateString()}</p>
+                  <p className="accordion-text"><span className="material-symbols-outlined">location_on</span>{event.location}</p>
+                  <button className="custom-btn btn-unenroll muted">Get Attendees</button>
                 </div>
               )}
             </div>
@@ -81,16 +97,21 @@ const HostedEvent = () => {
                 >
                   <h3>{uevent.eventName}</h3>
 
-                  <div>{expandedUpcoming === index ? <span class="material-symbols-outlined">arrow_drop_up</span> : <span class="material-symbols-outlined">arrow_drop_down</span>}</div>
+                  <div>{expandedUpcoming === index ? <span className="material-symbols-outlined">arrow_drop_up</span> : <span className="material-symbols-outlined">arrow_drop_down</span>}</div>
                 </div>
                 {expandedUpcoming === index && (
                   <div className="accordion-content">
                     <p className="accordion-description">{uevent.description}</p>
-                    <p className="accordion-text"><span class="material-symbols-outlined">person</span>{uevent.hostEmail}</p>
-                    <p className="accordion-text"><span class="material-symbols-outlined">calendar_month</span>{new Date(uevent.startDate).toLocaleDateString()} to {new Date(uevent.endDate).toLocaleDateString()}</p>
-                    <p className="accordion-text"><span class="material-symbols-outlined">watch_check</span>{uevent.time}</p>
-                    <p className="accordion-text"><span class="material-symbols-outlined">location_on</span>{uevent.location}</p>
-                    <button className="custom-btn" >Unenroll</button>
+                    <p className="accordion-text"><span className="material-symbols-outlined">person</span>{uevent.hostEmail}</p>
+                    <p className="accordion-text"><span className="material-symbols-outlined">calendar_month</span>{new Date(uevent.startDate).toLocaleDateString()} to {new Date(uevent.endDate).toLocaleDateString()}</p>
+                    <p className="accordion-text"><span className="material-symbols-outlined">watch_check</span>{uevent.time}</p>
+                    <p className="accordion-text"><span className="material-symbols-outlined">location_on</span>{uevent.location}</p>
+                    <div className="btns">
+                    <button className="custom-btn muted" >Get Attendees</button>
+                    <button className="custom-btn" onClick={openModal} >Update details</button>
+                    <button className="custom-btn" onClick={() => deleteEvent(uevent.eventId)}>Delete Event</button>
+                    </div>
+                    <EventUpdation isOpen={isModalOpen} onRequestClose={closeModal} eventDetails={uevent} onEventUpdated={() => setTrigger(prev => !prev)}/>
                   </div>
                 )}
               </div>

@@ -46,7 +46,6 @@
 .accordion-content{
     display: flex;
     flex-direction: column;
-    /* background-color: rgb(156, 160, 160); */
     justify-content: space-between;
     margin: 10px auto ;
     padding: 5px 10px;
@@ -77,30 +76,15 @@
     align-self: center;
     color: #000000;
 }
-/* .upcoming-accordion-container{
-    background-color: #ffffff;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    align-self: center;
+.btns{
     display: flex;
-    flex-direction: column;
-    min-width: 40%;   
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5px;
 }
-.upcoming-accordion-title{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 15px 0px ;
-    padding: 5px 10px;
+.btns button{
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+    transition: 0.2s ease-out;
 }
-.upcoming-accordion-content{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(156, 160, 160);
-    justify-content: space-between;
-    margin: 0px 15px ;
-    padding: 5px 10px;
-}
-.upcoming-accordion-item{
-    margin-top: 10px;
-    margin-bottom: 2px;
-} */

@@ -47,4 +47,12 @@ export const fetchUpcomingEvents = async (email) => {
     const response= await axios.get(`${API_BASE_URL}/get-upcoming-by-host-email/${email}`)
     return response.data;
   }
+  export const updateEvent =async(eventId,formattedFormData)=>{
+    const response= await axios.put(`${API_BASE_URL}/update-event/${eventId}`,formattedFormData)
+    return response.data; 
+  }
+  export const deleteEventByEventId = async(eventId)=>{
+    const response = await axios.delete(`${API_BASE_URL}/delete-event/${eventId}`);
+    return response.data;
+  }
   
