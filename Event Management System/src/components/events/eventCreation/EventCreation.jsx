@@ -4,9 +4,10 @@ import "./EventCreation.css";
 import { hostEvent } from '../../../ApiServices';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../../AuthContext';
+import { useEffect } from 'react';
 Modal.setAppElement('#root'); 
 const EventCreation = ({ isOpen, onRequestClose }) => {
-  const {user} =useAuth();
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     eventName: '',
     description: '',
@@ -26,35 +27,57 @@ const EventCreation = ({ isOpen, onRequestClose }) => {
     }));
   };
 
-  const handleSubmit = async(e) => {
+  useEffect(() => {
+    if (formData.startDate && formData.endDate) {
+      const start = new Date(formData.startDate);
+      const end = new Date(formData.endDate);
+      if (end >= start) {
+        const totalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1;
+        setFormData((prevState) => ({
+          ...prevState,
+          totalDays: totalDays.toString(),
+        }));
+      }
+    }
+  }, [formData.startDate, formData.endDate]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const today = new Date().toISOString().split('T')[0];
+    if (formData.startDate < today) {
+      toast.error('Start date must be today or later.');
+      return;
+    }
+    if (formData.endDate < formData.startDate) {
+      toast.error('End date must be equal to or later than the start date.');
+      return;
+    }
+
     const formattedFormData = {
       ...formData,
       time: `${formData.time}:00`
     };
-    console.log(formattedFormData)
-    try{
-    const response= await hostEvent(formattedFormData); 
-    toast.success(response); 
-    onRequestClose();
-    }
-    catch(error){
-     toast.error("Some Backend Error")
+    console.log(formattedFormData);
+    try {
+      const response = await hostEvent(formattedFormData);
+      toast.success(response);
+      onRequestClose();
+    } catch (error) {
+      toast.error("Some Backend Error");
     }
   };
 
   return (
-    
     <Modal
-    isOpen={isOpen}
-    onRequestClose={onRequestClose}
-    className="event-modal disable-scroll"
-    overlayClassName="event-modal-overlay"
-  >
-    <div className="event-modal-content">
-      <h2>Host Event</h2>
-      <span className='material-symbols-outlined form-close' onClick={onRequestClose}>close</span>
-      <form onSubmit={handleSubmit}>
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      className="event-modal disable-scroll"
+      overlayClassName="event-modal-overlay"
+    >
+      <div className="event-modal-content">
+        <h2>Host Event</h2>
+        <span className='material-symbols-outlined form-close' onClick={onRequestClose}>close</span>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="eventName">Event Name</label>
             <input
@@ -105,8 +128,7 @@ const EventCreation = ({ isOpen, onRequestClose }) => {
               id="totalDays"
               name="totalDays"
               value={formData.totalDays}
-              onChange={handleChange}
-              required
+              readOnly
             />
           </div>
           <div className="input-group">
@@ -132,7 +154,7 @@ const EventCreation = ({ isOpen, onRequestClose }) => {
             />
           </div>
           <div className='btn-wrapper'>
-          <button type="submit" className="submit-button custom-btn">Create Event</button>
+            <button type="submit" className="submit-button custom-btn">Create Event</button>
           </div>
         </form>
         
